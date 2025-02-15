@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<meta
+			name="description"
+			content="Этот шрифт обеспечивает более быстрое чтение, облегчая процесс восприятия текста."
+		/>
+		<meta
+			name="keywords"
+			content="шрифт, чтение, скорость, доступность, бесплатно"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Быстрый шрифт</title>
+		<style>
+			@font-face {
+				font-family: 'FastFont';
+				src: url('Fast_Sans.ttf') format('opentype');
+				font-display: swap;
+			}
+
+			html {
+				color: rgb(17, 24, 39);
+				background-color: #f4f7ff;
+				line-height: 1.75rem;
+				font-family: Arial, sans-serif;
+				scroll-behavior: smooth;
+			}
+
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				margin: 0;
+				padding: 16px;
+				overflow-x: hidden;
+			}
+
+			.container {
+				max-width: 800px;
+				width: 90%;
+				text-align: center;
+				padding: 32px;
+				background: white;
+				border-radius: 18px;
+				box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+			}
+
+			h1 {
+				font-size: 2rem;
+				margin-bottom: 16px;
+			}
+
+			.demo {
+				font-family: 'FastFont', sans-serif;
+				color: rgb(64, 73, 84);
+				border: solid 2px #4f46e5;
+				padding: 16px;
+				min-height: 100px;
+				border-radius: 8px;
+				background: #eef2ff;
+				text-align: left;
+				overflow-y: auto;
+				outline: none;
+			}
+
+			h2 {
+				margin-top: 50px;
+				font-size: 1.5rem;
+			}
+
+			p {
+				color: rgb(64, 73, 84);
+				font-size: 1rem;
+				text-align: justify;
+			}
+
+			b {
+				font-weight: bold;
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					padding: 20px;
+					width: 95%;
+				}
+				h1 {
+					font-size: 1.75rem;
+				}
+				.demo {
+					padding: 12px;
+					font-size: 0.9rem;
+				}
+				p {
+					font-size: 0.9rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Быстрый шрифт</h1>
+			<div class="demo" contenteditable>
+				Этот шрифт поможет тебе читать быстрее<br /><br />
+				Это текстовое поле<br /><br />
+				ВСТАВЬ ТЕКСТ СЮДА ✍️
+			</div>
+			<h2>Что это за шрифт?</h2>
+			<p>
+				Этот шрифт обеспечивает <b>более быстрое чтение</b> за счет
+				<b>облегчения процесса чтения</b> путем направления глаз по тексту с
+				помощью <b>искусственных точек фиксации</b>. В результате
+				<b>читатель фокусируется</b> только на выделенных начальных буквах и
+				позволяет мозговому центру завершить слово.
+			</p>
+			<p>
+				Это позволяет вам <b>читать со сверхзвуковой скоростью</b>. Используйте
+				его для <b>написания текстов</b>, <b>чтения электронных книг</b>,
+				<b>кодирования</b> или <b>просмотра веб-страниц</b>. Можно использовать
+				любое приложение, поддерживающее функции <b>OpenType</b>. Для некоторых
+				людей <b>искусственные точки фиксации</b> могут помочь им
+				сосредоточиться даже при <b>дислексии</b> или <b>СДВГ</b>.
+			</p>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				if (navigator.clipboard) {
+					navigator.clipboard
+						.readText()
+						.then(text => {
+							if (text) document.querySelector('.demo').innerText = text;
+						})
+						.catch(err => console.error('Ошибка буфера обмена:', err));
+				}
+			});
+		</script>
+	</body>
+</html>
